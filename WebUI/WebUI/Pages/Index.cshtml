@@ -1,10 +1,77 @@
 ﻿@page
 @model IndexModel
+@using WebUI.Models.ViewModels
+
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form method="post">
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm mb-3">
+                <select class="dropdown-toggle form-control" asp-for="viewModel.BaseTea" asp-items="Model.viewModel.BaseTeaSelectListItems">
+                    <option value="">Base Tea</option>
+                </select>
+            </div>
+            <div class="col-sm mb-3">
+                <select class="dropdown-toggle form-control" asp-for="viewModel.Flavour" asp-items="Model.viewModel.FlavourSelectListItems">
+                    <option value="">Flavour</option>
+                </select>
+            </div>
+            <div class="col-sm mb-3">
+                <div class="container">Toppings</div>
+                @for (int i = 0; i < Model.viewModel.Toppings.Count; i++)
+                {
+                    <div class="container">@Html.CheckBoxFor(model => model.viewModel.Toppings[i].toppingSelected) @Model.viewModel.Toppings[i].topping.Name</div>
+                }
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-sm mb-3">
+                <div class="container">Size</div>
+                @*@foreach (var size in Model.viewModel.Sizes)   
+                {
+                    <div class="container">
+                        @Html.RadioButtonFor(model => model.viewModel.Size, size) @size <br/>
+                    </div>
+                }*@
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        @*<table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Size</th>
+                    <th scope="col">Base</th>
+                    <th scope="col">Tea</th>
+                    <th scope="col">Toppings</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.viewModel.TeaSelections.Count; i++)
+                {
+                    <tr id="teaSelection_@i">
+                        <th scope="row">@Model.viewModel.TeaSelections[i].Size</th>
+                        <td>@Model.viewModel.TeaSelections[i].BaseTea</td>
+                        <td>@Model.viewModel.TeaSelections[i].Flavour</td>
+                        <td>@Model.viewModel.TeaSelections[i].Toppings</td>
+                        <td>@Model.viewModel.TeaSelections[i].Price</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                }
+                <tr>
+                    
+                </tr>
+            </tbody>
+        </table>*@
+    </div>
+
+</form>

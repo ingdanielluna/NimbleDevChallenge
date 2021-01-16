@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WebUI.Models.ViewModels;
 
 namespace WebUI.Pages
 {
@@ -12,12 +11,20 @@ namespace WebUI.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
+        [BindProperty]
+        public IndexViewModel viewModel { get; set; } = new IndexViewModel();
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
 
         public void OnGet()
+        {
+            
+        }
+
+        public void OnPost()
         {
 
         }
