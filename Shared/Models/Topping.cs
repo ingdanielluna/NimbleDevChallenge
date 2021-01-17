@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebUI.Models
+namespace Shared.Models
 {
-    public class BaseTea : TeaElementBase
+    public class Topping : TeaElementBase
     {
 
     }

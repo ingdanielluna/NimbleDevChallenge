@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebUI.Models
+namespace Shared.Models
 {
-    public class TeaElementBase
+    public class TeaElementBase : ITeaElementBase
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
