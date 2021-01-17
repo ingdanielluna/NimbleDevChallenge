@@ -31,12 +31,12 @@
         <div class="row mt-3">
             <div class="col-sm mb-3">
                 <div class="container">Size</div>
-                @*@foreach (var size in Model.viewModel.Sizes)   
+                @foreach (var size in Model.viewModel.Sizes)   
                 {
                     <div class="container">
-                        @Html.RadioButtonFor(model => model.viewModel.Size, size) @size <br/>
+                        @Html.RadioButtonFor(model => model.viewModel.Sizes, size) @size.Name <br/>
                     </div>
-                }*@
+                }
             </div>
         </div>
     </div>

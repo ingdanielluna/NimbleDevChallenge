@@ -170,6 +170,29 @@ namespace WebUI.Models.ViewModels
             Toppings.Add(t2);
             Toppings.Add(t3);
 
+            Sizes = new List<Size>();
+
+            Size s1 = new Size()
+            {
+                Id = Guid.NewGuid(),
+                Name = "L"
+            };
+            Size s2 = new Size()
+            {
+                Id = Guid.NewGuid(),
+                Name = "M"
+            };
+            Size s3 = new Size()
+            {
+                Id = Guid.NewGuid(),
+                Name = "S"
+            };
+
+            Sizes.Add(s1);
+            Sizes.Add(s2);
+            Sizes.Add(s3);
+
+
         }
     }
 }
